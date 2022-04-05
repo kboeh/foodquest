@@ -1,0 +1,29 @@
+.error-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #b1c690;
+    color: white;
+    line-height: 30px;
+}
+
+.error-text-container h1{
+    font-size: 25px;
+}
+
+.error-text-container p{
+    font-size: 15px;
+}
+
+@media (min-width: 650px) {
+    .error-text-container h1{
+        font-size: 35px;
+    }
+    
+    .error-text-container p{
+        font-size: 25px;
+        line-height: 45px;
+    }
+}

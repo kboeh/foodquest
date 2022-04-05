@@ -1,0 +1,241 @@
+.hero {
+    padding: 100px 0 15px 0;
+}
+
+.hero img {
+    width: 80%;
+    max-width: 773px;
+    height: auto;
+}
+
+.hero p{
+    justify-self: center;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 25px;
+    color: #828282;
+    width: 100%;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #b1c690;
+    padding-bottom: 40px;
+}
+
+.main-container p {
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.img-title {
+    font-size: 25px;
+    line-height: 24px;
+    margin: 40px 0 20px 0;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+
+.img-container p {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.recipe-label {
+    max-width: 300px;
+}
+
+.search-label {
+    max-width: 461px;
+}
+
+.img-box {
+    /* under image overlay */
+    position: relative;
+    width: 100%;
+}
+
+.home-imgs {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+    /* for image overlay */
+    display: block;
+    margin: 5px 0 30px 0;
+}
+
+.search-img {
+    max-width: 461px;
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.img-overlay:hover {
+    opacity: 1;
+}
+
+.img-overlay p{
+    text-align: left;
+    padding-left: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 20px;
+    color: #FFFFFF;
+    padding: 20px 10px 10px 10px;
+}
+
+.search-overlay-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-top: 5px;
+    font-size: 18px;
+    line-height: 18px;
+    color: #FFFFFF;
+    background: #EA5652;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+.search-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.about-section-container h1{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #828282;
+    margin: 40px 0 8px 0;
+}
+
+.about-section-container a{
+    font-size: 18px;
+    line-height: 18px;
+    text-decoration-line: underline;
+    color: #828282;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 600px) {
+    .hero {
+        padding: 130px 0 25px 0;
+    }
+
+    .hero p{
+        font-size: 30px;
+        line-height: 35px;
+        padding: 0 20px 0 20px;
+    }
+
+    .img-title {
+        font-size: 28px;
+        margin: 56px 0 15px 0;
+    }
+
+    .item-container {
+        margin: 0 15px 0 15px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .logo {
+        display: initial;
+        width: fit-content;
+        grid-area: logo;
+        margin: 24px 0 0 35px;
+    }
+
+    .logo img{
+        width: auto;
+        height: 62px;
+    }
+
+    .hero {
+        padding-top: 220px;
+    }
+
+    .hero p{
+        font-size: 48px;
+        line-height: 55px;
+        padding-bottom: 20px;
+    }
+
+    .img-container {
+        flex-direction: row;
+        gap: 48px;
+    }
+
+    .img-title {
+        font-size: 48px;
+        line-height: 48px;
+        margin-bottom: 32px;
+    }
+
+    .recipe-label {
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .item-container {
+        margin: 0;
+    }
+
+    .about-section-container h1{
+        font-size: 28px;
+        line-height: 26px;
+    }
+    
+    .about-section-container a{
+        font-size: 20px;
+        line-height: 20px;
+    }
+}
+
+@media (min-width: 1350px) {
+    .img-title {
+        font-size: 48px;
+    }
+    
+    .img-container {
+        gap: 35px;
+    }
+}
