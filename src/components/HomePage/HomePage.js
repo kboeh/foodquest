@@ -113,7 +113,7 @@ function HomePage() {
                     <p className='search-label'>SEARCH WITH OPTIONS</p>
                     <div className="img-box">
                         <img className='home-imgs search-img' src={book} alt="framed paintings" />
-                        <Link to="/search">
+                        <Link to="/foodquest/search">
                             <div className="img-overlay search-overlay">
                                 <div className='search-overlay-button'>SEARCH</div>  
                             </div>

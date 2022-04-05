@@ -76,7 +76,7 @@ function IngredientResult() {
   return (
     <div>
       <header className='nav-header'> 
-          <Link to = "/"><div className="nav-logo"><img  src={tomato} alt="tomato" /></div></Link>
+          <Link to = "/foodquest/"><div className="nav-logo"><img  src={tomato} alt="tomato" /></div></Link>
         
           <form className="nav-form" onSubmit={onSubmit}>     
             <button>
@@ -88,10 +88,10 @@ function IngredientResult() {
         
         <nav className="nav">
                 <ul>
-                    <li className="nav-home"><Link to="/"><img src={home} alt="home icon" />Home</Link></li>
-                    <li className="nav-search"><Link to="/search"><img src={bowl} alt="bowl icon" />Search</Link></li>
-                    <li><Link to="/random"><img src={random} alt="dice-icon" />Random</Link></li>
-                    <li><Link to="/random"><img src={info} alt="info icon" />About</Link></li>
+                    <li className="nav-home"><Link to="/foodquest/"><img src={home} alt="home icon" />Home</Link></li>
+                    <li className="nav-search"><Link to="/foodquest/search"><img src={bowl} alt="bowl icon" />Search</Link></li>
+                    <li><Link to="/foodquest/random"><img src={random} alt="dice-icon" />Random</Link></li>
+                    <li><Link to="/foodquest/random"><img src={info} alt="info icon" />About</Link></li>
                 </ul>
         </nav>
       </header>

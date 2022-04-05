@@ -98,10 +98,10 @@ function RandomResult() {
   return (
     <div>
       <header className='nav-header'> 
-          <Link to = "/"><div className="nav-logo"><img  src={tomato} alt="tomato" /></div></Link>
+          <Link to = "/foodquest/"><div className="nav-logo"><img  src={tomato} alt="tomato" /></div></Link>
         
         <form className="nav-form">
-          <Link to = "/ingredient">
+          <Link to = "/foodquest/ingredient">
               <button>
                   <img className='magnifier' src={search} alt="magnifier" />
               </button>
@@ -111,10 +111,10 @@ function RandomResult() {
 
         <nav className="nav">
                 <ul>
-                    <li className="nav-home"><Link to="/"><img src={home} alt="home icon" />Home</Link></li>
-                    <li className="nav-search"><Link to="/search"><img src={bowl} alt="bowl of food icon" />Search</Link></li>
+                    <li className="nav-home"><Link to="/foodquest/"><img src={home} alt="home icon" />Home</Link></li>
+                    <li className="nav-search"><Link to="/foodquest/search"><img src={bowl} alt="bowl of food icon" />Search</Link></li>
                     <li onClick= {refreshPage}><button className='random-button'><img src={random} alt="dice icon" />Random</button></li>
-                    <li><Link to="/about"><img src={info} alt="exclamation point icon" />About</Link></li>
+                    <li><Link to="/foodquest/about"><img src={info} alt="exclamation point icon" />About</Link></li>
                 </ul>
         </nav>
       </header>   
