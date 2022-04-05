@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/foodquest/static/css/main.f05cdf74.css",
-    "main.js": "/foodquest/static/js/main.1c38bf94.js",
+    "main.js": "/foodquest/static/js/main.0822f283.js",
     "static/js/787.8fe374ec.chunk.js": "/foodquest/static/js/787.8fe374ec.chunk.js",
     "static/media/book.png": "/foodquest/static/media/book.e915176c186778994571.png",
     "static/media/logo.png": "/foodquest/static/media/logo.d9d46106dd851ba53254.png",
     "index.html": "/foodquest/index.html",
     "main.f05cdf74.css.map": "/foodquest/static/css/main.f05cdf74.css.map",
-    "main.1c38bf94.js.map": "/foodquest/static/js/main.1c38bf94.js.map",
+    "main.0822f283.js.map": "/foodquest/static/js/main.0822f283.js.map",
     "787.8fe374ec.chunk.js.map": "/foodquest/static/js/787.8fe374ec.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f05cdf74.css",
-    "static/js/main.1c38bf94.js"
+    "static/js/main.0822f283.js"
   ]
 }
