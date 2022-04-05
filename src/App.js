@@ -10,11 +10,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />}/>
-        <Route path="/about" element={<AboutPage />}/>
-        <Route path="/ingredient" element={<IngredientResult />}/>
-        <Route path="/search" element={<SearchResult />}/>
-        <Route path="/random" element={<RandomResult />}/>
+        <Route path="/foodquest/" element={<HomePage />}/>
+        <Route path="/foodquest/about" element={<AboutPage />}/>
+        <Route path="/foodquest/ingredient" element={<IngredientResult />}/>
+        <Route path="/foodquest/search" element={<SearchResult />}/>
+        <Route path="/foodquest/random" element={<RandomResult />}/>
         <Route path="*" element={<ErrorPage />}/>
       </Routes>
     </Router>
