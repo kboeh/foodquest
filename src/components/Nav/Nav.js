@@ -30,7 +30,7 @@ function Nav() {
                 <nav className="nav">
                         <ul>
                             <li className="nav-home"><Link to="/foodquest/"><img src={home} alt="home icon" />Home</Link></li>
-                            <li className="nav-search"><Link to="/foodquest/search"><img src={bowl} alt="food icon" />Search</Link></li>
+                            <li><Link to="/foodquest/search"><img src={bowl} alt="food icon" />Search</Link></li>
                             <li><Link to="/foodquest/random"><img src={random} alt="dice icon" />Random</Link></li>
                             <li><Link to="/foodquest/about"><img src={info} alt="info icon" />About</Link></li>
                         </ul>

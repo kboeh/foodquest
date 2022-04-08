@@ -94,8 +94,8 @@ function HomePage() {
         <Nav />
         <header className="hero">
             <p>
-                When you can't just eat anything,<br />
-                You go on a<br/> <img src={logo} alt="Food Quest logo" /> <br/>Find food for a happy stomach.
+                If you can't just eat anything,<br />
+                Go on a<br/> <img src={logo} alt="Food Quest logo" /> <br/>Find food for a happy stomach.
             </p> 
         </header>
 

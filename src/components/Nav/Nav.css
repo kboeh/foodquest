@@ -70,25 +70,12 @@
     margin: 10px 35px 10px 35px;
 }
 
-.nav-search{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 12px;
-    cursor: pointer;
-}
-
 .nav a{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
     font-family: 'Josefin Sans', sans-serif;
-    font-weight: 300;
     font-size: 12px;
     line-height: 12px;
     color: #208A10;
