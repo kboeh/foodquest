@@ -3,8 +3,8 @@
   "name": "Food Quest",
   "icons": [
     {
-      "src": "../src/components/Nav/imgs/tomato.png",
-      "sizes": "62x70",
+      "src": "tomato.png",
+      "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
   ],
