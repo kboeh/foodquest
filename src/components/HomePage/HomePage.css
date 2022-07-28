@@ -190,13 +190,12 @@
     }
 
     .hero {
-        padding-top: 220px;
+        padding-top: 140px;
     }
 
     .hero p{
         font-size: 48px;
         line-height: 55px;
-        padding-bottom: 20px;
     }
 
     .img-container {
@@ -204,7 +203,7 @@
         gap: 48px;
     }
 
-    .img-container p {
+    .search-label {
         margin-bottom: 45px;
     }
 
@@ -216,7 +215,7 @@
 
     .recipe-label {
         height: 50px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     .item-container {
@@ -240,6 +239,6 @@
     }
     
     .img-container {
-        gap: 35px;
+        gap: 60px;
     }
 }
