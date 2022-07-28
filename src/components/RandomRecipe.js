@@ -1,6 +1,5 @@
-function RandomRecipe3({props}) {
-
-  const randomNum = Math.floor(Math.random() * (29-20+1))+20;
+function RandomRecipe ({props, random}) {
+  const randomNum = random;
   
   return (
     <div className="item-container">
@@ -9,11 +8,11 @@ function RandomRecipe3({props}) {
           {props && <img className="home-imgs" src={props[randomNum].recipe.image} alt={props[randomNum].recipe.label} />}
           <a href={props && props[randomNum].recipe.url} className="img-overlay" target='_blank' rel="noreferrer">
             {props && <p>{props[randomNum].recipe.dietLabels.join(',  ')}</p>}    
-            {props && <p>{props[randomNum].recipe.dishType.join(',  ')}</p>}      
+            {props && <p>{props[randomNum].recipe.dishType.join(',  ')}</p>}     
           </a>
       </div>
     </div>
   );
 }
 
-export default RandomRecipe3;
+export default RandomRecipe;

@@ -1,22 +1,33 @@
-import './SearchResult.css';
+import './SearchPage.css';
 import {useState, useRef} from 'react';
-import Axios from 'axios'
-import RecipeImgs from '../RecipeImgs/RecipeImgs.js'
-import Nav from "../Nav/Nav.js";
+import Axios from 'axios';
+import RecipeImgs from '../RecipeImgs/RecipeImgs.js';
+import info from "../Nav/imgs/info.png";
+import random from "../Nav/imgs/random.png";
+import home from "../Nav/imgs/home.png";
+import tomato from "../Nav/imgs/tomato.png";
+import bowl from "../Nav/imgs/bowl.png";
+import {Link} from 'react-router-dom';
 
-function SearchResult() {
+function SearchPage() {
   // connects to API
   const YOUR_APP_ID = '18ced154';
   const YOUR_APP_KEY = 'd6b34df41b0d12e9d59922fcd6c6aa3d';
+
   // value of search field (set to empty array)
-  const [query, setQuery] = useState([])
-  
-  const [check, setCheck] = useState([])
-  const url = `https://api.edamam.com/search?q=${query}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}${check}&to=30`
-  
+  const [query, setQuery] = useState([]);
+  //API results
+  const [hits, setHits] = useState([]);
+  //checkboxes
+  const [check, setCheck] = useState([]);
+   //for scroll event after search results
+   const scrollResults = useRef(null);
+
+  const url = `https://api.edamam.com/search?q=${query}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}${check}&to=30`;
+
   //concats checkbox values to url
   let checkbox = () => {
-    let boxes = document.forms[1];
+    let boxes = document.forms[0];
     let str = "";
     let i = 0;
     for (i = 0; i < boxes.length; i++) {
@@ -24,13 +35,15 @@ function SearchResult() {
         str = str + boxes[i].value;
       }
     }
-    setCheck(str)
+    setCheck(str);
   }
   
-  const [hits, setHits] = useState([])
   const recipes = async () => {
     try {
       const request = await Axios.get(url);
+      if (!request.data.hits.length) {
+        alert ('No results! Please try again.');
+      }
       setHits(request.data.hits);
     }
     catch (e) {
@@ -39,15 +52,12 @@ function SearchResult() {
     };
   };
 
-  //for scroll event after search results
-  const scrollResults = useRef(null);
-
   //when form is submitted
   const onSubmit = (e) => {
     //prevents the app from reloading upon every form submit
     e.preventDefault();
     //gets recipe data
-    recipes()
+    recipes();
     //scrolls down to results
     setTimeout(function() {window.scrollTo({
       top: scrollResults.current.offsetTop,
@@ -57,7 +67,17 @@ function SearchResult() {
 
   return (
     <div className='search-container'>
-      <Nav />
+      <div className='nav-header'>
+        <Link to = "/foodquest/"><div className="nav-logo"><img src={tomato} alt="tomato" /></div></Link>
+        <nav className="nav">
+          <ul>
+            <li className="nav-home"><Link to="/foodquest/"><img src={home} alt="home icon" />Home</Link></li>
+            <li><Link to="/foodquest/search"><img src={bowl} alt="food icon" />Search</Link></li>
+            <li><Link to="/foodquest/random"><img src={random} alt="dice icon" />Random</Link></li>
+            <li><Link to="/foodquest/about"><img src={info} alt="info icon" />About</Link></li>
+          </ul>
+        </nav>
+      </div>
       <div className='search-input-container'>
         <h1>Recipe Search</h1>
         <form className='search-form' onSubmit={onSubmit}>
@@ -73,12 +93,11 @@ function SearchResult() {
               <label className='check-option'><input type="checkbox" value="&health=tree-nut-free" onChange={checkbox}/>tree-nut-free</label>
               <label className='check-option'><input type="checkbox" value="&health=wheat-free" onChange={checkbox}/>wheat-free</label>
               <label className='check-option'><input type="checkbox" value="&health=soy-free" onChange={checkbox}/>soy-free</label>
-              <label className='check-option'><input type="checkbox" value="&health=fish-free" onChange={checkbox}/>fish-free</label>
             </div>
             <div className='checkboxes'>
+            <label className='check-option'><input type="checkbox" value="&health=fish-free" onChange={checkbox}/>fish-free</label>
               <label className='check-option'><input type="checkbox" value="&health=shellfish-free" onChange={checkbox}/>shellfish-free</label>
               <label className='check-option'><input type="checkbox" value="&health=egg-free" onChange={checkbox}/>egg-free</label>
-              <label className='check-option'><input type="checkbox" value="&health=low-sugar" onChange={checkbox}/>low-sugar</label>
               <label className='check-option'><input type="checkbox" value="&health=vegan" onChange={checkbox}/>vegan</label>
               <label className='check-option'><input type="checkbox" value="&health=vegetarian" onChange={checkbox}/>vegetarian</label>
               <label className='check-option'><input type="checkbox" value="&health=paleo" onChange={checkbox}/>paleo</label>
@@ -97,4 +116,4 @@ function SearchResult() {
   );
 }
 
-export default SearchResult;
+export default SearchPage;

@@ -1,3 +1,4 @@
+/* Styles for the .nav-header found in Nav.css. */
 .search-container {
     padding-bottom: 60px;
 }
@@ -13,7 +14,7 @@
 }
 
 .search-input-container h1{
-    margin: 130px 0 30px 0;
+    margin: 70px 0 30px 0;
 }
 
 .search-form{
@@ -43,7 +44,7 @@
     display: flex;
     justify-content: center;
     gap: 43px;
-    margin-top: 30px;
+    margin: 30px 0 25px 0;
 }
 
 .checkboxes {
@@ -85,7 +86,6 @@ background-color: currentcolor;
     width: 150px;
     border: none;
     border-radius: 25px;
-    margin-top: 20px;
     background-color:#EA5652;
     color: white;
     font-family: 'Josefin Sans', sans-serif;
@@ -117,7 +117,6 @@ background-color: currentcolor;
 
     .search-form button {
         width: 150px;
-        margin-top: 20px;
         font-size: 20px;
         padding: 13px 0 10px 0;
     }
@@ -131,15 +130,11 @@ background-color: currentcolor;
     }
 
     .search-input-container h1{
-        margin: 160px 0 20px 0;
-    }
-
-    .search-input-container h1{
-        margin-bottom: 40px;
+        margin: 70px 0 40px 0;
     }
 
     .checkbox-container {
-        margin-top: 40px;
+        margin: 40px 0 35px 0;
     }
 }
 
