@@ -38,7 +38,7 @@
 .img-title {
     font-size: 25px;
     line-height: 24px;
-    margin: 40px 0 20px 0;
+    margin: 40px 0 25px 0;
 }
 
 .img-container {
@@ -168,7 +168,7 @@
 
     .img-title {
         font-size: 28px;
-        margin: 56px 0 15px 0;
+        margin: 56px 0 25px 0;
     }
 
     .item-container {
@@ -204,10 +204,14 @@
         gap: 48px;
     }
 
+    .img-container p {
+        margin-bottom: 45px;
+    }
+
     .img-title {
         font-size: 48px;
         line-height: 48px;
-        margin-bottom: 32px;
+        margin-bottom: 50px;
     }
 
     .recipe-label {

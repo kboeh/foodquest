@@ -59,7 +59,7 @@ function HomePage() {
                 <p className="img-title">FIND RECIPES<br/>YOUR STOMACH NEEDS</p>
                 <div className="img-container">
                     <div className="item-container">
-                        <p className='search-label'>SEARCH WITH OPTIONS</p>
+                        <p className='search-label'>SEARCH WITH DIETARY OPTIONS</p>
                         <div className="img-box">
                             <img className='home-imgs search-img' src={book} alt="framed paintings" />
                             <Link to="/foodquest/search">
