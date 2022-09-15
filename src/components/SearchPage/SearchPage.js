@@ -1,6 +1,6 @@
 import './SearchPage.css';
 import {useState, useRef} from 'react';
-import Axios from 'axios';
+import axios from 'axios';
 import RecipeImgs from '../RecipeImgs/RecipeImgs.js';
 import info from "../Nav/imgs/info.png";
 import random from "../Nav/imgs/random.png";
@@ -11,8 +11,8 @@ import {Link} from 'react-router-dom';
 
 function SearchPage() {
   // connects to API
-  const YOUR_APP_ID = '18ced154';
-  const YOUR_APP_KEY = 'd6b34df41b0d12e9d59922fcd6c6aa3d';
+  // const YOUR_APP_ID = '18ced154';
+  // const YOUR_APP_KEY = 'd6b34df41b0d12e9d59922fcd6c6aa3d';
 
   // value of search field (set to empty array)
   const [query, setQuery] = useState([]);
@@ -23,8 +23,10 @@ function SearchPage() {
    //for scroll event after search results
    const scrollResults = useRef(null);
 
-  const url = `https://api.edamam.com/search?q=${query}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}${check}&to=30`;
-
+  // const url = `http://localhost:8000/food?q=${query}`;
+  // const url = `https://api.edamam.com/search?q=${query}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}${check}&to=30`;
+  
+  
   //concats checkbox values to url
   let checkbox = () => {
     let boxes = document.forms[0];
@@ -38,19 +40,61 @@ function SearchPage() {
     setCheck(str);
   }
   
+  // const recipes = async () => {
+  //   try {
+  //     const request = await axios.get(url);
+  //     if (!request.data.length) {
+  //       alert ('No results! Please try again.');
+  //     }
+  //     setHits(request.data);
+  //   }
+  //   catch (e) {
+  //     alert ('Oh no! Only 10 searches per minute please. Try again in 60 seconds.');
+  //     console.log(e);
+  //   };
+  // };
+
+  //works
+
+  // const recipes = () => {
+  //   const options = {
+  //     method: 'GET',
+  //     url:'http://localhost:8000/food',
+  //     params: {q: query},
+  //   }
+  //   axios.request(options).then((response) => {
+  //     console.log(response.data)
+  //     setHits(response.data.hits);
+  //     console.log(hits)
+  //   })
+  // }
+
   const recipes = async () => {
+    const options = {
+      method: 'GET',
+      url:'http://localhost:8000/food',
+      params: {q: query},
+    }
     try {
-      const request = await Axios.get(url);
-      if (!request.data.hits.length) {
+      const request = await axios.request(options);
+      if (request.data.hits == 0) {
         alert ('No results! Please try again.');
       }
       setHits(request.data.hits);
+      console.log(request.data.hits)
     }
     catch (e) {
       alert ('Oh no! Only 10 searches per minute please. Try again in 60 seconds.');
       console.log(e);
-    };
-  };
+    }
+  }
+
+  // const recipes = async () => {
+    
+  //     const request = await axios.get(url);
+  //     setHits(request.data);
+    
+  // };
 
   //when form is submitted
   const onSubmit = (e) => {
