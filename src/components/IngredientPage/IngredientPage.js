@@ -1,7 +1,7 @@
 import './IngredientPage.css';
 import {useState, useEffect, useRef} from 'react';
 import {Link} from 'react-router-dom';
-import Axios from 'axios';
+import axios from 'axios';
 import RecipeImgs from '../RecipeImgs/RecipeImgs.js';
 import info from "../Nav/imgs/info.png";
 import random from "../Nav/imgs/random.png";
@@ -13,9 +13,6 @@ import bowl from "../Nav/imgs/bowl.png";
 function IngredientPage() {
   //string entered into 'quick search by ingredients'
   const stored = localStorage.getItem("searchResults");
-
-  const YOUR_APP_ID = '18ced154';
-  const YOUR_APP_KEY = 'd6b34df41b0d12e9d59922fcd6c6aa3d';
   
   const [query, setQuery] = useState(stored);
   const [hits, setHits] = useState([]);
@@ -27,28 +24,25 @@ function IngredientPage() {
     return diet[ranDietNum];
   };
 
-  //url used when searching recipes on another page, but rendering on this page
-  const storedUrl = `https://api.edamam.com/search?q=${stored}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&health=${health.current}&to=30`
-  //url used when searching recipes on this page
-  const url = `https://api.edamam.com/search?q=${query}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&health=${health.current}&to=30`
-
   //api call when search was done on another page
   useEffect (()=>{
     async function recipes() {
-      const request = await Axios.get(storedUrl);
-      if (!request.data.hits.length) {
+      const storedUrl = `http://localhost:8000/food?q=${stored}&health=${health.current}`
+      const request = await axios.get(storedUrl);
+      if (request.data.hits === 0) {
         alert ('No results! Please try again.');
       }
       setHits(request.data.hits);
     }
     recipes();
-  }, [storedUrl]);
+  }, [stored]);
 
   //api call when search was done on this page
   const recipes = async () => {
+    const url = `http://localhost:8000/food?q=${query}&health=${health.current}`
     try {
-      const request = await Axios.get(url);
-      if (!request.data.hits.length) {
+      const request = await axios.request(url);
+      if (request.data.hits === 0) {
         alert ('No results! Please try again.');
       }
       setHits(request.data.hits);

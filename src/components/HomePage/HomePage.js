@@ -9,9 +9,6 @@ import {useEffect, useState, useRef} from 'react';
 import RandomRecipe from '../RandomRecipe.js';
 
 function HomePage() {
-    const YOUR_APP_ID = '18ced154';
-    const YOUR_APP_KEY = 'd6b34df41b0d12e9d59922fcd6c6aa3d';
-
     // default of hits = null, so that while we wait for the request to complete, we don't attempt to render the image
     const [hits, setHits] = useState(null);
     const foodText = useRef(null);
@@ -22,10 +19,9 @@ function HomePage() {
         const ranFoodNum = Math.floor(Math.random() * 25);
         const randomFood = food[ranFoodNum];
         foodText.current = randomFood;
-
-        const url = `https://api.edamam.com/search?q=${randomFood}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&to=30`;
         
         async function recipes() {
+            const url = `http://localhost:8000/food?q=${randomFood}`
             try {
                 const request = await Axios.get(url);
                 setHits(request.data.hits);
@@ -80,6 +76,6 @@ function HomePage() {
             <Foot />
         </div>
     );
-}
+};
 
 export default HomePage;

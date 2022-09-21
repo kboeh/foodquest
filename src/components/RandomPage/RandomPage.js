@@ -11,12 +11,9 @@ import search from "../Nav/imgs/search.png";
 import bowl from "../Nav/imgs/bowl.png";
 
 function RandomPage() {
-  //stores text entered into searchfield for use in IngredientResult
+  //stores text entered into searchfield for use in IngredientPage
   const [storedQuery, setStoredQuery] = useState([]);
   localStorage.setItem("searchResults", storedQuery);
-
-  const YOUR_APP_ID = '18ced154';
-  const YOUR_APP_KEY = 'd6b34df41b0d12e9d59922fcd6c6aa3d';
 
   const [hits, setHits] = useState([]);
   const query = useRef(randomFood());
@@ -29,15 +26,13 @@ function RandomPage() {
   };
 
   function randomHealth() {
-    const diet = ['dairy-free', 'gluten-free', 'peanut-free', 'tree-nut-free', 'wheat-free', 'soy-free', 'fish-free', 'shellfish-free', 'egg-free', 'low-sugar', 'vegan', 'vegetarian', 'paleo'];
-    const ranDietNum = Math.floor(Math.random() * 13);
+    const diet = ['dairy-free', 'gluten-free', 'peanut-free', 'tree-nut-free', 'wheat-free', 'soy-free', 'fish-free', 'shellfish-free', 'egg-free', 'vegan', 'vegetarian', 'paleo'];
+    const ranDietNum = Math.floor(Math.random() * 12);
     return diet[ranDietNum];
   };
 
-  //url used when searching recipes on another page, but rendering on this page
-  const onLoadUrl = `https://api.edamam.com/search?q=${query.current}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&health=${health.current}&to=30`;
-
   useEffect (()=>{
+    const onLoadUrl = `http://localhost:8000/food?q=${query.current}&health=${health.current}`
     async function recipes() {
       try {
         const request = await Axios.get(onLoadUrl);
@@ -49,12 +44,12 @@ function RandomPage() {
       }
     }
     recipes();
-  }, [onLoadUrl]);
+  }, []);
 
   //reloads page to get new random search results
   function refreshPage() {
     window.location.reload(false);
-  }
+  };
 
   return (
     <div>
@@ -87,6 +82,6 @@ function RandomPage() {
       </div>
     </div>
   );
-}
+};
 
 export default RandomPage;

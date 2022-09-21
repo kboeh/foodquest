@@ -10,9 +10,6 @@ import bowl from "../Nav/imgs/bowl.png";
 import {Link} from 'react-router-dom';
 
 function SearchPage() {
-  // connects to API
-  // const YOUR_APP_ID = '18ced154';
-  // const YOUR_APP_KEY = 'd6b34df41b0d12e9d59922fcd6c6aa3d';
 
   // value of search field (set to empty array)
   const [query, setQuery] = useState([]);
@@ -22,8 +19,6 @@ function SearchPage() {
   const [check, setCheck] = useState([]);
    //for scroll event after search results
    const scrollResults = useRef(null);
-
-  // const url = `https://api.edamam.com/search?q=${query}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}${check}&to=30`;
   
   // concats checkbox values to url
   let checkbox = () => {
@@ -35,22 +30,7 @@ function SearchPage() {
       }
     }
     setCheck(str);
-  }
-
-  //works
-
-  // const recipes = () => {
-  //   const options = {
-  //     method: 'GET',
-  //     url:'http://localhost:8000/food',
-  //     params: {q: query},
-  //   }
-  //   axios.request(options).then((response) => {
-  //     console.log(response.data)
-  //     setHits(response.data.hits);
-  //     console.log(hits)
-  //   })
-  // }
+  };
 
   const recipes = async () => {
     const url = `http://localhost:8000/food?q=${query}${check}`
@@ -65,7 +45,7 @@ function SearchPage() {
       alert ('Oh no! Only 10 searches per minute please. Try again in 60 seconds.');
       console.log(e);
     }
-  }
+  };
 
   //when form is submitted
   const onSubmit = (e) => {
