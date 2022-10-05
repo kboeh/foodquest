@@ -2,7 +2,7 @@ function RandomRecipe ({props, random}) {
   const randomNum = random;
   
   return (
-    <div className="item-container">
+    <div className="item-container" data-testid="random-imgs">
       {props && <p className="recipe-label">{props[randomNum].recipe.label}</p>}
       <div className="img-box">
           {props && <img className="home-imgs" src={props[randomNum].recipe.image} alt={props[randomNum].recipe.label} />}

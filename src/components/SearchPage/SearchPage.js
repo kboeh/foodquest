@@ -1,5 +1,5 @@
 import './SearchPage.css';
-import {useState, useRef} from 'react';
+import {useState, useRef, createRef} from 'react';
 import axios from 'axios';
 import RecipeImgs from '../RecipeImgs/RecipeImgs.js';
 import info from "../Nav/imgs/info.png";
@@ -11,18 +11,20 @@ import {Link} from 'react-router-dom';
 
 function SearchPage() {
 
-  // value of search field (set to empty array)
+  // value of search field
   const [query, setQuery] = useState([]);
   //API results
   const [hits, setHits] = useState([]);
   //checkboxes
   const [check, setCheck] = useState([]);
    //for scroll event after search results
-   const scrollResults = useRef(null);
+  const scrollResults = useRef(null);
   
+  // const searchForm = createRef();
   // concats checkbox values to url
   let checkbox = () => {
     let boxes = document.forms[0];
+    // let boxes = searchForm.current.getElementsByTagName('input');
     let str = "";
     for (let i = 0; i < boxes.length; i++) {
       if (boxes[i].checked) {
@@ -40,6 +42,7 @@ function SearchPage() {
         alert ('No results! Please try again.');
       }
       setHits(request.data.hits);
+      // console.log(request)
     }
     catch (e) {
       alert ('Oh no! Only 10 searches per minute please. Try again in 60 seconds.');
@@ -54,10 +57,10 @@ function SearchPage() {
     //gets recipe data
     recipes();
     //scrolls down to results
-    setTimeout(function() {window.scrollTo({
-      top: scrollResults.current.offsetTop,
-      behavior: 'smooth'
-    })}, 500);
+    // setTimeout(function() {window.scrollTo({
+    //   top: scrollResults.current.offsetTop,
+    //   behavior: 'smooth'
+    // })}, 500);
   }
 
   return (
@@ -73,12 +76,12 @@ function SearchPage() {
           </ul>
         </nav>
       </div>
+      {/* <div className='search-input-container' ref={searchForm}> */}
       <div className='search-input-container'>
         <h1>Recipe Search</h1>
         <form className='search-form' onSubmit={onSubmit}>
           <input className='search-field' type='text' placeholder='Enter ingredients' 
           //target.value gets the value from a target event
-          //onChange executes when a user enters text
           value={query} onChange={(e)=> setQuery(e.target.value)}/>
           <div className='checkbox-container'>
             <div className='checkboxes'>
