@@ -23,42 +23,19 @@ test('imgs render on SearchPage component', () => {
   expect(random).toHaveAttribute('src', 'random.png');
 });
 
-// test("render recipes from API response on SearchPage component", async () => {
-//   // render your component
-//   render(
-//     <Router>
-//       <SearchPage />
-//     </Router>
-//   ) 
-//   // access input & button
-//   const query = screen.getByPlaceholderText('Enter ingredients') 
-//   const button = screen.getByRole('button')
-//   //simulate typing 'apple' into input
-//   userEvent.type(query, 'apple');
-//   //then click search button
-//   userEvent.click(button); 
-
-//   await waitFor(() =>  
-//     expect(screen.getAllByText('Recipe')[0]).toBeInTheDocument()
-//     // expect(screen.getAllByText('Recipe')).toBeTruthy()
-//   )   
-// });
-
 test("render recipes from API response on SearchPage component", async () => {
+  // render the component
   render(
     <Router>
       <SearchPage />
     </Router>
   ) 
-  // target input, checkbox, and search button
-  const query = screen.getByPlaceholderText('Enter ingredients') ;
-  const check = screen.getByText('dairy-free');
-  const button = screen.getByRole('button');
-  // simulate typing 'apple' into input and checking box
+  // access input & button
+  const query = screen.getByPlaceholderText('Enter ingredients') 
+  const button = screen.getByRole('button')
+  //simulate typing 'apple' into input
   userEvent.type(query, 'apple');
-  userEvent.click(check);
-  // expect(ch).toBeChecked()
-
+  //then click search button
   userEvent.click(button); 
 
   await waitFor(() =>  
@@ -66,33 +43,24 @@ test("render recipes from API response on SearchPage component", async () => {
   )   
 });
 
-//use enzyme?
-// test.only('should update check state', async () => {
-//   // const { result } = renderHook(() =>SearchPage());
-//   // const user = userEvent.setup()
+// test("render recipes from API response on SearchPage component", async () => {
 //   render(
 //     <Router>
 //       <SearchPage />
 //     </Router>
-//   );
-//   // var renderedNode = TestUtils.renderIntoDocument(<SearchPage />);
-//     // renderedNode.prototype.checkbox = jest.fn()
-//   const ch = screen.getByText('dairy-free');
-//   // userEvent.click(ch);
-//   fireEvent.click(ch);
-//   // await user.click(screen.getByText('dairy-free'))
+//   ) 
+//   // target input, checkbox, and search button
+//   const query = screen.getByPlaceholderText('Enter ingredients') ;
+//   const check = screen.getByText('dairy-free');
+//   const button = screen.getByRole('button');
+//   // simulate typing 'apple' into input and checking box
+//   userEvent.type(query, 'apple');
+//   userEvent.click(check);
+//   // expect(ch).toBeChecked()
 
-//   // act(() => {
-//   //   result.current.checkbox()
-//   // })
+//   userEvent.click(button); 
 
-  
-//   // console.log('test'),
-//   // console.log(result.current),
-//   // let check = SearchPage.checkbox
-//   // console.log(form[1])
-//   expect(checked()).toBeCalled()
-//   // expect(recipe.url).toBe("http://localhost:8000/food?q=apple&health=dairy-free")
-//   // expect(renderedNode.prototype.checkbox).toBeCalled();
-  
-// })
+//   await waitFor(() =>  
+//     expect(screen.getAllByText('Recipe')[0]).toBeInTheDocument()
+//   )   
+// });
