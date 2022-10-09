@@ -27,7 +27,7 @@ function IngredientPage() {
   //api call when search was done on another page
   useEffect (()=>{
     async function recipes() {
-      const storedUrl = `https://lonely-ox-cap.cyclic.app/food?q=${stored}&health=${health.current}`
+      const storedUrl = `https://yellow-tadpole-shoe.cyclic.app/food?q=${stored}&health=${health.current}`
       const request = await axios.get(storedUrl);
       if (request.data.hits === 0) {
         alert ('No results! Please try again.');
@@ -39,7 +39,7 @@ function IngredientPage() {
 
   //api call when search was done on this page
   const recipes = async () => {
-    const url = `https://lonely-ox-cap.cyclic.app/food?q=${query}&health=${health.current}`
+    const url = `https://yellow-tadpole-shoe.cyclic.app/food?q=${query}&health=${health.current}`
     try {
       const request = await axios.request(url);
       if (request.data.hits === 0) {

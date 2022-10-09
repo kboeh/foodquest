@@ -33,7 +33,7 @@ function SearchPage() {
   };
 
   const recipes = async () => {
-    const url = `https://lonely-ox-cap.cyclic.app/food?q=${query}${check}`
+    const url = `https://yellow-tadpole-shoe.cyclic.app/food?q=${query}${check}`
     try {
       const request = await axios.request(url);
       if (request.data.hits === 0) {

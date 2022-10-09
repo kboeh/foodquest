@@ -32,7 +32,7 @@ function RandomPage() {
   };
 
   useEffect (()=>{
-    const onLoadUrl = `https://lonely-ox-cap.cyclic.app/food?q=${query.current}&health=${health.current}`
+    const onLoadUrl = `https://yellow-tadpole-shoe.cyclic.app/food?q=${query.current}&health=${health.current}`
     async function recipes() {
       try {
         const request = await Axios.get(onLoadUrl);

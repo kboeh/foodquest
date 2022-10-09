@@ -21,7 +21,7 @@ function HomePage() {
         foodText.current = randomFood;
         
         async function recipes() {
-            const url = `https://lonely-ox-cap.cyclic.app/food?q=${randomFood}`
+            const url = `https://yellow-tadpole-shoe.cyclic.app/food?q=${randomFood}`
             try {
                 const request = await Axios.get(url);
                 setHits(request.data.hits);
