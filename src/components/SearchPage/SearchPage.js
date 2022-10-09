@@ -1,5 +1,5 @@
 import './SearchPage.css';
-import {useState, useRef, createRef} from 'react';
+import {useState, useRef} from 'react';
 import axios from 'axios';
 import RecipeImgs from '../RecipeImgs/RecipeImgs.js';
 import info from "../Nav/imgs/info.png";
@@ -20,11 +20,9 @@ function SearchPage() {
    //for scroll event after search results
   const scrollResults = useRef(null);
   
-  // const searchForm = createRef();
   // concats checkbox values to url
   let checkbox = () => {
     let boxes = document.forms[0];
-    // let boxes = searchForm.current.getElementsByTagName('input');
     let str = "";
     for (let i = 0; i < boxes.length; i++) {
       if (boxes[i].checked) {
@@ -35,14 +33,13 @@ function SearchPage() {
   };
 
   const recipes = async () => {
-    const url = `http://localhost:8000/food?q=${query}${check}`
+    const url = `https://lonely-ox-cap.cyclic.app/food?q=${query}${check}`
     try {
       const request = await axios.request(url);
       if (request.data.hits === 0) {
         alert ('No results! Please try again.');
       }
       setHits(request.data.hits);
-      // console.log(request)
     }
     catch (e) {
       alert ('Oh no! Only 10 searches per minute please. Try again in 60 seconds.');
@@ -54,13 +51,12 @@ function SearchPage() {
   const onSubmit = (e) => {
     //prevents the app from reloading upon every form submit
     e.preventDefault();
-    //gets recipe data
     recipes();
     //scrolls down to results
-    // setTimeout(function() {window.scrollTo({
-    //   top: scrollResults.current.offsetTop,
-    //   behavior: 'smooth'
-    // })}, 500);
+    setTimeout(function() {window.scrollTo({
+      top: scrollResults.current.offsetTop,
+      behavior: 'smooth'
+    })}, 500);
   }
 
   return (
@@ -76,7 +72,6 @@ function SearchPage() {
           </ul>
         </nav>
       </div>
-      {/* <div className='search-input-container' ref={searchForm}> */}
       <div className='search-input-container'>
         <h1>Recipe Search</h1>
         <form className='search-form' onSubmit={onSubmit}>
