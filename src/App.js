@@ -8,13 +8,13 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
-    <Router>
+    <Router basename="/foodquest">
       <Routes>
-        <Route path="/foodquest/" element={<HomePage />}/>
-        <Route path="/foodquest/about" element={<AboutPage />}/>
-        <Route path="/foodquest/ingredient" element={<IngredientPage />}/>
-        <Route path="/foodquest/search" element={<SearchPage />}/>
-        <Route path="/foodquest/random" element={<RandomPage />}/>
+        <Route path="/" element={<HomePage />}/>
+        <Route path="/about" element={<AboutPage />}/>
+        <Route path="/ingredient" element={<IngredientPage />}/>
+        <Route path="/search" element={<SearchPage />}/>
+        <Route path="/random" element={<RandomPage />}/>
         <Route path="*" element={<ErrorPage />}/>
       </Routes>
     </Router>
