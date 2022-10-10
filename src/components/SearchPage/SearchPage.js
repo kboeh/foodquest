@@ -36,10 +36,11 @@ function SearchPage() {
     const url = `https://yellow-tadpole-shoe.cyclic.app/food?q=${query}${check}`
     try {
       const request = await axios.request(url);
-      if (request.data.hits === 0) {
+      if (request.data.hits.length === 0) {
         alert ('No results! Please try again.');
       }
       setHits(request.data.hits);
+      console.log(request.data)
     }
     catch (e) {
       alert ('Oh no! Only 10 searches per minute please. Try again in 60 seconds.');

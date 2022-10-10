@@ -23,6 +23,22 @@ test('imgs render on SearchPage component', () => {
   expect(random).toHaveAttribute('src', 'random.png');
 });
 
+// test("Alert message renders if a query isn't entered into the search form on SearchPage component", async () => {
+//   render(
+//     <Router>
+//       <SearchPage />
+//     </Router>
+//   ) 
+//   const alertMock = jest.spyOn(window,'alert').mockImplementation(); 
+//   const button = screen.getByRole('button')
+
+//   userEvent.click(button); 
+
+//   await waitFor(() =>  
+//     expect(alertMock).toHaveBeenCalledTimes(1)
+//   )   
+// });
+
 test("render recipes from API response on SearchPage component", async () => {
   // render the component
   render(

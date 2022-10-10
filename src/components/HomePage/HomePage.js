@@ -6,7 +6,7 @@ import logo from "./imgs/logo.png";
 import {Link} from 'react-router-dom';
 import Axios from 'axios';
 import {useEffect, useState, useRef} from 'react';
-import RandomRecipe from '../RandomRecipe.js';
+import HomeRecipeImgs from '../HomeRecipeImgs.js';
 
 function HomePage() {
     // default of hits = null, so that while we wait for the request to complete, we don't attempt to render the image
@@ -47,9 +47,9 @@ function HomePage() {
             <main className="main-container">
                 <p className="img-title">{foodText.current} RECIPES</p>
                 <div className="img-container">
-                    <RandomRecipe props={hits} random = {Math.floor(Math.random() * 9)}/>
-                    <RandomRecipe props={hits} random = {Math.floor(Math.random() * (19-10+1))+10}/>  
-                    <RandomRecipe props={hits} random = {Math.floor(Math.random() * (29-20+1))+20}/>
+                    <HomeRecipeImgs props={hits} random = {Math.floor(Math.random() * 9)}/>
+                    <HomeRecipeImgs props={hits} random = {Math.floor(Math.random() * (19-10+1))+10}/>  
+                    <HomeRecipeImgs props={hits} random = {Math.floor(Math.random() * (29-20+1))+20}/>
                 </div>
 
                 <p className="img-title">FIND RECIPES<br/>YOUR STOMACH NEEDS</p>
