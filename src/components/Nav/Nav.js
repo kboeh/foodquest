@@ -16,7 +16,7 @@ function Nav() {
     return (
         <div>
             <div className='nav-header'>
-                <Link to = "/foodquest/"><div className="nav-logo"><img src={tomato} alt="tomato" /></div></Link>
+                <Link to = "/"><div className="nav-logo"><img src={tomato} alt="tomato" /></div></Link>
 
                 <form className="nav-form">
                     <Link to = "/foodquest/ingredient">
@@ -30,9 +30,9 @@ function Nav() {
                 <nav className="nav">
                         <ul>
                             <li className="nav-home"><Link to="/foodquest/"><img src={home} alt="home icon" />Home</Link></li>
-                            <li><Link to="/foodquest/search"><img src={bowl} alt="food icon" />Search</Link></li>
-                            <li><Link to="/foodquest/random"><img src={random} alt="dice icon" />Random</Link></li>
-                            <li><Link to="/foodquest/about"><img src={info} alt="info icon" />About</Link></li>
+                            <li><Link to="/search"><img src={bowl} alt="food icon" />Search</Link></li>
+                            <li><Link to="/random"><img src={random} alt="dice icon" />Random</Link></li>
+                            <li><Link to="/about"><img src={info} alt="info icon" />About</Link></li>
                         </ul>
                 </nav>
 
