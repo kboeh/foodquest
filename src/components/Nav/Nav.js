@@ -9,7 +9,7 @@ import { useState } from 'react';
 import {Link} from 'react-router-dom';
 
 function Nav() {
-    //stores text entered into searchfield for use in IngredientResult
+    //stores text entered into searchfield for use in IngredientPage
     const [query, setQuery] = useState([]);
     localStorage.setItem("searchResults", query);
 
@@ -19,7 +19,7 @@ function Nav() {
                 <Link to = "/"><div className="nav-logo"><img src={tomato} alt="tomato" /></div></Link>
 
                 <form className="nav-form">
-                    <Link to = "/foodquest/ingredient">
+                    <Link to = "/ingredient">
                         <button>
                             <img className='magnifier' src={search} alt="magnifier" />
                         </button>
