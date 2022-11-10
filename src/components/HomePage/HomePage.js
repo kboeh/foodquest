@@ -69,7 +69,7 @@ function HomePage() {
             </main>
             <div className="about-section-container">
             <h1>WHAT IS <br /> FOOD QUEST?</h1>
-            <Link to="/foodquest/about">Learn more about Food Quest <br />
+            <Link to="/about">Learn more about Food Quest <br />
                 and its purpose.
             </Link>
         </div>
