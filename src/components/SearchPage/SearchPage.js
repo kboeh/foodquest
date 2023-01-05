@@ -22,11 +22,11 @@ function SearchPage() {
   
   // concats checkbox values to url
   let checkbox = () => {
-    let boxes = document.forms[0];
+    let boxes = document.querySelectorAll('.check-input');
     let str = "";
-    for (let i = 0; i < boxes.length; i++) {
-      if (boxes[i].checked) {
-        str = str + boxes[i].value;
+    for (let box of boxes) {
+      if (box.checked) {
+        str += box.value;
       }
     }
     setCheck(str);
@@ -40,7 +40,7 @@ function SearchPage() {
         alert ('No results! Please try again.');
       }
       setHits(request.data.hits);
-      console.log(request.data)
+      // console.log(request.data)
     }
     catch (e) {
       alert ('Oh no! Only 10 searches per minute please. Try again in 60 seconds.');
@@ -81,20 +81,20 @@ function SearchPage() {
           value={query} onChange={(e)=> setQuery(e.target.value)}/>
           <div className='checkbox-container'>
             <div className='checkboxes'>
-              <label className='check-option'><input type="checkbox" value="&health=dairy-free" onChange={checkbox}/>dairy-free</label>
-              <label className='check-option'><input type="checkbox" value="&health=gluten-free" onChange={checkbox}/>gluten-free</label>
-              <label className='check-option'><input type="checkbox" value="&health=peanut-free" onChange={checkbox}/>peanut-free</label>
-              <label className='check-option'><input type="checkbox" value="&health=tree-nut-free" onChange={checkbox}/>tree-nut-free</label>
-              <label className='check-option'><input type="checkbox" value="&health=wheat-free" onChange={checkbox}/>wheat-free</label>
-              <label className='check-option'><input type="checkbox" value="&health=soy-free" onChange={checkbox}/>soy-free</label>
+              <label className='check-option'><input className='check-input' type="checkbox" value="&health=dairy-free" onChange={checkbox}/>dairy-free</label>
+              <label className='check-option'><input className='check-input' type="checkbox" value="&health=gluten-free" onChange={checkbox}/>gluten-free</label>
+              <label className='check-option'><input className='check-input' type="checkbox" value="&health=peanut-free" onChange={checkbox}/>peanut-free</label>
+              <label className='check-option'><input className='check-input' type="checkbox" value="&health=tree-nut-free" onChange={checkbox}/>tree-nut-free</label>
+              <label className='check-option'><input className='check-input' type="checkbox" value="&health=wheat-free" onChange={checkbox}/>wheat-free</label>
+              <label className='check-option'><input className='check-input' type="checkbox" value="&health=soy-free" onChange={checkbox}/>soy-free</label>
             </div>
             <div className='checkboxes'>
-            <label className='check-option'><input type="checkbox" value="&health=fish-free" onChange={checkbox}/>fish-free</label>
-              <label className='check-option'><input type="checkbox" value="&health=shellfish-free" onChange={checkbox}/>shellfish-free</label>
-              <label className='check-option'><input type="checkbox" value="&health=egg-free" onChange={checkbox}/>egg-free</label>
-              <label className='check-option'><input type="checkbox" value="&health=vegan" onChange={checkbox}/>vegan</label>
-              <label className='check-option'><input type="checkbox" value="&health=vegetarian" onChange={checkbox}/>vegetarian</label>
-              <label className='check-option'><input type="checkbox" value="&health=paleo" onChange={checkbox}/>paleo</label>
+            <label className='check-option'><input className='check-input' type="checkbox" value="&health=fish-free" onChange={checkbox}/>fish-free</label>
+              <label className='check-option'><input className='check-input' type="checkbox" value="&health=shellfish-free" onChange={checkbox}/>shellfish-free</label>
+              <label className='check-option'><input className='check-input' type="checkbox" value="&health=egg-free" onChange={checkbox}/>egg-free</label>
+              <label className='check-option'><input className='check-input' type="checkbox" value="&health=vegan" onChange={checkbox}/>vegan</label>
+              <label className='check-option'><input className='check-input' type="checkbox" value="&health=vegetarian" onChange={checkbox}/>vegetarian</label>
+              <label className='check-option'><input className='check-input' type="checkbox" value="&health=paleo" onChange={checkbox}/>paleo</label>
             </div>
           </div>
           <button type='submit' ref={scrollResults}>Get Recipe</button>
