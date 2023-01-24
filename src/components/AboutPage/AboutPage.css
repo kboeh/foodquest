@@ -1,86 +1,86 @@
 .about-container {
-    font-family: 'Josefin Sans', sans-serif;
-    background-color: #b1c690;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #b1c690;
 }
 
 .about-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    font-family: 'Josefin Sans', sans-serif;
-    padding-top: 100px;
-    background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  padding-top: 100px;
+  background-color: white;
 }
 
 .about-header h1 {
-    color: #828282;
-    font-size: 25px;
+  color: #828282;
+  font-size: 1.563rem;
 }
 
 .about-header img {
-    width: 80%;
-    max-width: 773px;
-    height: auto;
-    padding: 5px 0 20px 0;
+  width: 80%;
+  max-width: 773px;
+  height: auto;
+  padding: 5px 0 20px 0;
 }
 .about-main {
-    text-align: center;
-    font-family: 'Josefin Sans', sans-serif;
-    color: #828282;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  color: #828282;
 }
 
 .about-text-container {
-    padding: 0 15px 0 15px;
+  padding: 0 15px 0 15px;
 }
 
 .about-main p {
-    line-height: 20px;
-    color: white;
-    padding: 20px 0 20px 0;
-    text-align: left;
+  line-height: 1.25rem;
+  color: white;
+  padding: 20px 0 20px 0;
+  text-align: left;
 }
 
 .about-main h2 {
-    color: white;
+  color: white;
 }
 
 @media (min-width: 1000px) {
-    .about-header {
-        padding-top: 180px;
-    }
+  .about-header {
+    padding-top: 180px;
+  }
 
-    .about-text-container {
-        padding: 0 50px 0 50px;
-    }
+  .about-text-container {
+    padding: 0 50px 0 50px;
+  }
 
-    .about-header h1 {
-        font-size: 60px;
-    }
+  .about-header h1 {
+    font-size: 3.75rem;
+  }
 
-    .about-main p {
-        line-height: 25px;
-        font-size: 23px;
-        padding: 40px 0 40px 0;
-    }
+  .about-main p {
+    line-height: 1.563rem;
+    font-size: 1.438rem;
+    padding: 40px 0 40px 0;
+  }
 
-    .about-main h2 {
-        font-size: 35px;
-    }
+  .about-main h2 {
+    font-size: 2.188rem;
+  }
 }
 
 @media (min-width: 1400px) {
-    .about-text-container {
-        padding: 0 80px 0 80px;
-    }
+  .about-text-container {
+    padding: 0 80px 0 80px;
+  }
 
-    .about-main p {
-        line-height: 33px;
-        font-size: 30px;
-        padding: 40px 0 40px 0;
-    }
+  .about-main p {
+    line-height: 2.063rem;
+    font-size: 1.875rem;
+    padding: 40px 0 40px 0;
+  }
 
-    .about-main h2 {
-        font-size: 40px;
-    }
+  .about-main h2 {
+    font-size: 2.5rem;
+  }
 }
