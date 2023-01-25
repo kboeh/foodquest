@@ -1,29 +1,28 @@
 footer {
-    display: flex;
-    justify-content: center;
-    height: fit-content;
-    background-color: #b1c690;
-    padding: 28px 0 80px 0;
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+  background-color: #b1c690;
+  padding: 28px 0 80px 0;
 }
 
-footer a { 
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 18px;
-    color: #FFFFFF;
-    text-align: center;
+footer a {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  color: #ffffff;
+  text-align: center;
 }
 
 @media (min-width: 1000px) {
-    footer {
-        height: 66px;
-        padding: 28px 0 55px 0;
-    }
+  footer {
+    height: 66px;
+    padding: 28px 0 55px 0;
+  }
 
-    footer a { 
-        font-size: 25px;
-        line-height: 28px;
-    }
-
+  footer a {
+    font-size: 1.563rem;
+    line-height: 1.75rem;
+  }
 }
